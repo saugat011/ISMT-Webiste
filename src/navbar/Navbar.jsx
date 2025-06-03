@@ -1,10 +1,10 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import "./navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activePopup, setActivePopup] = useState(""); // "", "courses", "campuses"
+  const [activePopup, setActivePopup] = useState(""); // "", "courses", "campuses", "students"
   const navigate = useNavigate();
 
   const closeMenu = () => {
@@ -39,7 +39,7 @@ function Navbar() {
           </NavLink>
         </li>
 
-        {/* Courses Link with Popup */}
+        {/* Courses */}
         <li style={{ position: "relative" }}>
           <a href="#" className="link" onClick={togglePopup("courses")}>
             Courses
@@ -63,7 +63,7 @@ function Navbar() {
           </NavLink>
         </li>
 
-        {/* Our Campuses Link with Popup */}
+        {/* Campuses */}
         <li style={{ position: "relative" }}>
           <a href="#" className="link" onClick={togglePopup("campuses")}>
             Our Campuses
@@ -73,8 +73,8 @@ function Navbar() {
               <a href="#" className="course">ISMT College Kathmandu</a>
               <a href="#" className="course">ISMT College Pokhara</a>
               <a href="#" className="course">ISMT College Biratnagar</a>
-              <a href="#" className="course">ISMT College Butwal </a>
-              <a href="#" className="course">ISMT College Chitwan </a>
+              <a href="#" className="course">ISMT College Butwal</a>
+              <a href="#" className="course">ISMT College Chitwan</a>
             </div>
           )}
         </li>
@@ -84,21 +84,35 @@ function Navbar() {
             Admissions
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/students" className={({ isActive }) => isActive ? "link active" : "link"} onClick={closeMenu}>
+
+        {/* ✅ Students */}
+        <li style={{ position: "relative" }}>
+          <a href="#" className="link" onClick={togglePopup("students")}>
             Students
-          </NavLink>
+          </a>
+          {activePopup === "students" && (
+            <div className="course-popup">
+              <Link to="/students/activities" className="course" onClick={closeMenu}>In Campus Activities</Link>
+              <Link to="/students/handbook" className="course" onClick={closeMenu}>Student Handbook</Link>
+              <Link to="/students/credit" className="course" onClick={closeMenu}>Credit Transfers</Link>
+              <Link to="/students/success" className="course" onClick={closeMenu}>Success Speaks</Link>
+              <Link to="/students/complaints" className="course" onClick={closeMenu}>Complaints/Suggestions</Link>
+            </div>
+          )}
         </li>
+
         <li>
           <NavLink to="/gallery" className={({ isActive }) => isActive ? "link active" : "link"} onClick={closeMenu}>
             Gallery
           </NavLink>
         </li>
+
         <li>
           <NavLink to="/contact" className={({ isActive }) => isActive ? "link active" : "link"} onClick={closeMenu}>
             Contact Us
           </NavLink>
         </li>
+
         <li>
           <NavLink to="/apply" className={({ isActive }) => isActive ? "link active" : "link"} onClick={closeMenu}>
             <button className="apply">Apply Now</button>

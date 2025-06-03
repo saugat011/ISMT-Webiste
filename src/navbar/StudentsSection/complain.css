@@ -1,0 +1,172 @@
+/* Container */
+.complain-wrapper {
+  display: flex;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 30px;
+  gap: 60px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+  animation: slideFadeIn 0.8s ease forwards;
+}
+
+/* Left info panel */
+.complain-info {
+  flex: 1;
+  color: #1e293b;
+}
+
+.complain-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.complain-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.complain-text.subtle {
+  color: #64748b;
+  font-style: italic;
+}
+
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.contact-details li {
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #475569;
+}
+
+.contact-details strong {
+  color: #3b82f6;
+}
+
+/* Right form panel */
+.complain-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1e293b;
+}
+
+/* Form group with floating labels */
+.form-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  color: #1e293b;
+  background: transparent;
+  transition: border-color 0.3s ease;
+  outline: none;
+  resize: none;
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 1rem;
+  pointer-events: none;
+  background: white;
+  padding: 0 6px;
+  transform: translateY(-50%);
+  transition: 0.3s ease all;
+}
+
+/* Move label on focus or when filled */
+.form-group input:focus,
+.form-group input:not(:placeholder-shown),
+.form-group textarea:focus,
+.form-group textarea:not(:placeholder-shown) {
+  border-color: #3b82f6;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 0.85rem;
+  color: #3b82f6;
+}
+
+/* Textarea height fix */
+.textarea-group textarea {
+  min-height: 110px;
+}
+
+/* Button style */
+.submit-btn {
+  padding: 16px 0;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.7);
+}
+
+/* Animation */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .complain-wrapper {
+    flex-direction: column;
+    padding: 20px;
+    gap: 40px;
+  }
+
+  .complain-title {
+    font-size: 2rem;
+  }
+
+  .form-header {
+    font-size: 1.8rem;
+  }
+}
