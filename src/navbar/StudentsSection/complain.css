@@ -80,7 +80,7 @@
   border-radius: 8px;
   padding: 14px 16px;
   font-size: 1rem;
-  color: #1e293b;
+  color: black;
   background: transparent;
   transition: border-color 0.3s ease;
   outline: none;
@@ -106,7 +106,7 @@
 .form-group input:not(:placeholder-shown),
 .form-group textarea:focus,
 .form-group textarea:not(:placeholder-shown) {
-  border-color: #3b82f6;
+  border-color: black;
 }
 
 .form-group input:focus + label,
@@ -115,7 +115,9 @@
 .form-group textarea:not(:placeholder-shown) + label {
   top: -10px;
   font-size: 0.85rem;
-  color: #3b82f6;
+  color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-size: 15px;
 }
 
 /* Textarea height fix */
@@ -138,7 +140,7 @@
 }
 
 .submit-btn:hover {
-  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  background: linear-gradient(135deg, #f6ab3b, #facc60);
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.7);
 }
 
